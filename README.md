@@ -1,50 +1,51 @@
-# zed-kanayago
+# Kanayago for Zed
 
-A Zed extension that enables [Kanayago](https://github.com/S-H-GAMELINKS/kanayago) LSP functionality in the Zed editor.
+A Zed extension that enables [Kanayago](https://github.com/S-H-GAMELINKS/kanayago) as a Language Server Protocol (LSP) backend for Ruby.
 
-## About Kanayago
+## What is Kanayago?
 
-Kanayago is a library that processes AST nodes provided by Ruby's parser at the Ruby layer. It includes LSP (Language Server Protocol) functionality and provides features such as syntax checking for Ruby code.
-
-## Overview
-
-This extension allows you to use Kanayago's LSP features in the Zed editor, providing support for Ruby code analysis including syntax checking.
-
-## Prerequisites
-
-- Zed editor installed
-- `kanayago` command available in your PATH
-
-## Installation
-
-### Installing Kanayago
-
-First, install Kanayago itself:
-
-```bash
-gem install kanayago
-```
-
-### Installing the Zed Extension
-
-1. Open Zed editor
-2. Open the command palette with `cmd+shift+p` (macOS) or `ctrl+shift+p` (Linux/Windows)
-3. Type `zed: extensions` to open the extensions menu
-4. Search for "Kanayago" and install it
-
-## Usage
-
-Once the extension is installed, Kanayago's LSP functionality will automatically activate when you open Ruby files (`.rb`).
+Kanayago is a Ruby library that exposes the internal AST produced by Ruby's parser (`parse.y`) and provides a Language Server Protocol (LSP) implementation.
+It offers syntax checking and AST-based analysis for Ruby code.
 
 ## Features
 
-- Ruby code syntax checking
-- AST-based code analysis
+- Ruby syntax checking powered by Kanayago
+- AST-based Ruby code analysis
+- Lightweight LSP implementation fully written in Ruby
+
+## Requirements
+
+Before installing this extension, make sure the following is available:
+
+- **`kanayago` command available in your PATH**
+
+You can install Kanayago via RubyGems:
+
+``` bash
+gem install kanayago
+```
+
+## Installation
+
+1.  Open Zed.
+2.  Open the command palette:
+    -   `Cmd+Shift+P` (macOS)
+    -   `Ctrl+Shift+P` (Linux / Windows)
+3.  Search for **"Extensions"** and open the Extensions view.
+4.  Search for **"Kanayago"** and install the extension.
+
+## Usage
+
+After installation, the Kanayago LSP starts automatically when you open a Ruby (`.rb`) file.
+
+No additional configuration is required as long as the `kanayago` command is in your PATH.
 
 ## License
 
-See the LICENSE file for details about this project's license.
+This project is licensed under the MIT License.
+See the [LICENSE](./LICENSE) file for details.
 
 ## Repository
 
 https://github.com/S-H-GAMELINKS/zed-kanayago
+
