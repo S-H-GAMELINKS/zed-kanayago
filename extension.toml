@@ -9,3 +9,5 @@ repository = "https://github.com/S-H-GAMELINKS/zed-kanayago"
 [language_servers.kanayago]
 name = "Kanayago"
 languages = ["Ruby"]
+command = "kanayago"
+args = ["--lsp"]

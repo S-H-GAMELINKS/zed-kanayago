@@ -10,13 +10,18 @@ impl zed::Extension for KanayagoExtension {
     fn language_server_command(
         &mut self,
         _language_server_id: &zed::LanguageServerId,
-        _worktree: &zed::Worktree,
+        worktree: &zed::Worktree,
     ) -> Result<zed::Command> {
-        Ok(zed::Command {
-            command: "kanayago".to_string(),
-            args: vec!["--lsp".to_string()],
-            env: Default::default(),
-        })
+        match worktree.which("kanayago") {
+            Some(path) => Ok(zed::Command {
+                command: path,
+                args: vec!["--lsp".into()],
+                env: Default::default(),
+            }),
+            None => Err(
+                "Not found kanayago. Please run 'gem install kanayago'".into(),
+            ),
+        }
     }
 }
 
